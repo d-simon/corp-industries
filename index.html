@@ -2,29 +2,28 @@
 layout: default
 ---
 
-<div class="home">
+<div class="section section--hero-video">
+    <div class="section__container">
+        <div class="hero-video">
+            <div class="video-container">
+                <iframe src="//player.vimeo.com/video/114707531?portrait=0&color=fff" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <h1><b>CORP Industries</b></h1>
-<!--
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
- -->
-  <h2 class="page-heading">FAQ</h2>
-
-    {% for faq in site.data.faq %}
-        <h3 class="h6">
-          <b>{{ faq.question }}</b>
-        </h3>
-        <p>{{ faq.answer }}</p>
-    {% endfor %}
-
+<div class="section section--faq">
+    <div class="section__container">
+        <h2 class="section__title">FAQ</h2>
+        <div class="faq" data-js-grid>
+            {% for faq in site.data.faq %}
+            <div class="faq__item">
+                <h3 class="faq__question">
+                    <b>{{ faq.question }}</b>
+                </h3>
+                <p class="faq__answer">{{ faq.answer }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>

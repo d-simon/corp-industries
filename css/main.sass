@@ -1,0 +1,39 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8"
+
+// // Our variables
+$base-font-family: "nimbus-sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+$base-font-family-small: "nimbus-sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+$base-font-size:   15px
+$small-font-size:  $base-font-size * 0.875
+$base-line-height: 1.4
+
+
+$phone:              480px
+$tablet-portrait:    768px
+$tablet-landscape:   960px
+$desktop:            1140px
+$desktop-large:      1440px
+$full-width:         $desktop-large
+
+// Using media queries with like this:
+// @include media-query($on-palm)
+//     .wrapper
+//         padding-right: $spacing-unit / 2
+//         padding-left: $spacing-unit / 2
+//
+//
+// @mixin media-query($device)
+//     @media screen and (max-width: $device)
+//         @content
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "normalize"
+@import "skeleton-mod"
+@import "girder"
+@import "base"
