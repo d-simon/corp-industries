@@ -19,16 +19,12 @@ layout: default
   </ul>
  -->
   <h2 class="page-heading">FAQ</h2>
-  <ul class="post-list">
 
     {% for faq in site.data.faq %}
-      <li>
         <h3 class="h6">
           <b>{{ faq.question }}</b>
         </h3>
         <p>{{ faq.answer }}</p>
-      </li>
     {% endfor %}
-  </ul>
 
 </div>
