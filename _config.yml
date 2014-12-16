@@ -1,7 +1,7 @@
 # Site settings
 title: CORP Industries
 email: info@corp-industries.com
-description: > # We believe in a sustainable humanity.
+description: We believe in a sustainable humanity.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://corp-industries.com" # the base hostname & protocol for your site
 twitter_username: DavidSimon_
@@ -9,4 +9,5 @@ github_username:  d-simon
 
 # Build settings
 markdown: kramdown
-
+sass:
+    style: :compressed
