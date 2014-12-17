@@ -15,7 +15,7 @@ layout: default
 <section class="section section--offer">
     <div class="section__container">
         <h2 class="section__title">The Offer</h2>
-        <h1 class="offer__headline"><span class="offer__headline-break">One Million U.S.&nbsp;Dollars</span> <span class="thin">for your</span> body</h1>
+        <h1 class="offer__headline"><span class="offer__headline-break">One Million U.S.&nbsp;Dollars</span> <span class="thin">for Your</span> Body</h1>
         <div class="offer">
             <div class="offer__coffin">
                 <img src="{{ "/media/img/coffin.svg" | prepend: site.baseurl }}" alt="CORP Industries" class="coffin">
@@ -24,7 +24,7 @@ layout: default
                 <p>Get <b>$1,000,000</b> and <b>one year</b> to live the life you want.</p>
                 <p>After that one year you will commit <b>cerebricide.</b></p>
                 <p>We get to use your <b>body</b> to produce <b>sustainable energy.</b></p>
-                <button type="button" class="offer__button">Sign now!</button>
+                <button type="button" class="offer__button" data-js-glitch>Sign up now!</button>
                 <p class="offer__disclaimer">The offer is non-refundable. For any further information about our offer see the <b>F.A.Q</b> and <b>Terms &amp; Conditions.</b></p>
             </div>
         </div>
@@ -33,7 +33,7 @@ layout: default
 
 <section class="section section--faq">
     <div class="section__container">
-        <h2 class="section__title">FAQ</h2>
+        <h2 class="section__title"><span data-js-glitch>FAQ</span></h2>
         <div class="faq" data-js-grid>
             {% for faq in site.data.faq %}
             <div class="faq__item">
