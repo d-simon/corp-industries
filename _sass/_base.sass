@@ -7,26 +7,6 @@ body
     margin: 0 $gutters/2
 
 
-.logo
-    display: block
-    width: 100%
-    max-width: 280px
-    margin: 30px 0
-
-    @include media-query($phone)
-        max-width: 440px
-        margin: 60px auto
-
-    @include media-query($tablet-landscape)
-        max-width: 585px
-        margin: 100px auto
-
-
-.site-title
-    display: block
-
-
-
 .section
     margin: 0 auto 30px
 
@@ -47,6 +27,84 @@ body
         @include max-width($tablet-landscape)
             margin-left: -10px
             margin-right: -10px
+
+
+
+.logo
+    display: block
+    width: 100%
+    max-width: 280px
+    margin: 30px 0
+
+    @include media-query($phone)
+        max-width: 440px
+        margin: 60px auto
+
+    @include media-query($tablet-landscape)
+        max-width: 585px
+        margin: 100px auto
+
+
+.offer
+    @extend %row
+    max-width: $tablet-portrait
+    margin: 0 auto
+
+    &__coffin
+        @include unit(whole)
+
+        @include media-query($tablet-portrait)
+            @include responsive-unit(golden-small)
+
+        & > img
+            margin: 0 auto
+
+    &__description
+        margin: 40px auto 0
+
+        @include unit(whole)
+        @include media-query($tablet-portrait)
+            @include responsive-unit(golden-large)
+            margin: 80px auto 0
+
+        max-width: 500px
+        font-size: 1.7rem
+
+        @include max-width(568px)
+            max-width: 100%
+
+
+        & > p
+            margin-bottom: 1rem
+
+
+    &__button
+        border-radius: 0
+        color: #FFF
+        background-color: #BE1E2D
+        border: 0
+        width: 100%
+        text-shadow: none
+        margin-top: $base-line-height * $base-font-size
+        margin-bottom: $base-line-height * $small-font-size
+
+        &:hover, &:active, &:focus
+            color: #FFF
+        &:focus
+            -moz-box-shadow:    inset 0 0 10px #000000
+            -webkit-box-shadow: inset 0 0 10px #000000
+            box-shadow:         inset 0 0 10px #000000
+
+    &__disclaimer
+        color: #9B9B9B
+        font-size: $small-font-size
+
+
+
+.coffin
+    display: block
+    width: 100%
+    max-width: 220px
 
 
 

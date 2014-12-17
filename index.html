@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="section section--hero-video">
+<section class="section section--hero-video">
     <div class="section__container">
         <div class="hero-video">
             <div class="video-container">
@@ -10,9 +10,27 @@ layout: default
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="section section--faq">
+<section class="section section--offer">
+    <div class="section__container">
+        <h2 class="section__title">The Offer</h2>
+        <div class="offer">
+            <div class="offer__coffin">
+                <img src="{{ "/media/img/coffin.svg" | prepend: site.baseurl }}" alt="CORP Industries" class="coffin">
+            </div>
+            <div class="offer__description">
+                <p>Get <b>$1,000,000</b> and <b>one year</b> to live the life you want.</p>
+                <p>After that one year you will commit <b>cerebricide.</b></p>
+                <p>We get to use your <b>body</b> to produce <b>sustainable energy.</b></p>
+                <button type="button" class="offer__button">Sign now!</button>
+                <p class="offer__disclaimer">The offer is non-refundable. For any further information about our offer see the <b>F.A.Q</b> and <b>Terms &amp; Conditions.</b></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section--faq">
     <div class="section__container">
         <h2 class="section__title">FAQ</h2>
         <div class="faq" data-js-grid>
@@ -26,4 +44,4 @@ layout: default
             {% endfor %}
         </div>
     </div>
-</div>
+</section>
