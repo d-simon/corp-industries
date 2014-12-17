@@ -59,7 +59,11 @@ body
     &__headline
         // font-size: 4rem
         text-align: center
-        margin-bottom: 60px
+        margin-bottom: 30px
+
+        @include max-width($tablet-landscape - 1px)
+            margin-bottom: 40px
+
 
         &-break
             @include max-width($tablet-landscape - 1px)
@@ -120,7 +124,6 @@ body
     display: block
     width: 100%
     max-width: 220px
-
 
 
 .faq
