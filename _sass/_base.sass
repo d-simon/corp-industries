@@ -159,7 +159,7 @@ body > canvas
 
 
 .hacktivism-message
-    visibility: hidden
+    display: none
     z-index: -1
     position: fixed
     top: 0
@@ -175,7 +175,7 @@ body > canvas
     background: #000
 
     &.is-active
-        visibility: visible
+        display: block
         z-index: 11
 
     &--bottom
@@ -184,7 +184,7 @@ body > canvas
 
 
 .hacktivism-video
-    visibility: hidden
+    display: none
     z-index: -1
     position: fixed
     background: #000
@@ -192,7 +192,7 @@ body > canvas
     left: 50%
 
     &.is-active
-        visibility: visible
+        display: block
         z-index: 12
 
         & + .hacktivism-bg
