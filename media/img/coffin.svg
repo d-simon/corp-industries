@@ -4,40 +4,33 @@
 	 viewBox="0 0 123.7 247.5" enable-background="new 0 0 123.7 247.5" xml:space="preserve">
 <g>
 	<g>
+		<path fill="#E6E7E8" d="M93.5,10l21.6,61.5L93.5,238.7H29.9L9.3,68.9L29.2,10L93.5,10 M96.6,5.7l-3,0l-64.4,0l-3.1,0l-1,2.9
+			L5.3,67.5L5,68.4l0.1,1l20.6,169.9l0.5,3.7h3.8h63.6h3.7l0.5-3.7L119.4,72l0.1-1l-0.3-1L97.6,8.6L96.6,5.7L96.6,5.7z"/>
+	</g>
+	<g>
 		<g>
 			<defs>
-				<path id="SVGID_1_" d="M92.6,0H29.4c-4.2,0-7.9,2.6-9.2,6.5L0.5,65.3C0,66.6-0.1,68,0.1,69.4l20.5,169.7
-					c0.6,4.8,4.7,8.4,9.6,8.4h62.3c4.9,0,9-3.6,9.6-8.3l21.5-167.1c0.2-1.4,0-2.9-0.4-4.3L101.7,6.4C100.4,2.6,96.7,0,92.6,0z
-					 M93.5,10.2l21.6,61.5L93.5,239H29.9L9.3,69.1l19.9-58.9L93.5,10.2L93.5,10.2z"/>
+				<path id="SVGID_1_" d="M45.7,63.2c-10.9,0-19.7,9-19.7,20.1v47.5c0,9.2,13.4,9.2,13.5,0V87.4h3.2v120.3c0,12.3,17.9,11.9,17.9,0
+					v-70.4h3.1v70.4c0,11.9,18,12.3,18,0V87.4h3.1v43.4c0,9.3,13.4,9.3,13.3,0V83.6c0-10.3-7.9-20.4-19.9-20.3L45.7,63.2z"/>
 			</defs>
+			<use xlink:href="#SVGID_1_"  overflow="visible" fill-rule="evenodd" clip-rule="evenodd" fill="#E6E7E8"/>
 			<clipPath id="SVGID_2_">
 				<use xlink:href="#SVGID_1_"  overflow="visible"/>
 			</clipPath>
-			<rect x="-5" y="-5" clip-path="url(#SVGID_2_)" fill="#E4E4E3" width="133.7" height="257.5"/>
+			<rect x="21.1" y="58.2" clip-path="url(#SVGID_2_)" fill="#E6E7E8" width="82.2" height="163.6"/>
 		</g>
 	</g>
 	<g>
 		<g>
 			<defs>
-				<path id="SVGID_3_" d="M45.7,63.2c-10.9,0-19.7,9-19.7,20.1v47.5c0,9.2,13.4,9.2,13.5,0V87.4h3.2v120.3c0,12.3,17.9,11.9,17.9,0
-					v-70.4h3.1v70.4c0,11.9,18,12.3,18,0V87.4h3.1v43.4c0,9.3,13.4,9.3,13.3,0V83.6c0-10.3-7.9-20.4-19.9-20.3L45.7,63.2z"/>
+				<path id="SVGID_3_" d="M62.9,60.1c8.5,0.1,15.4-7.2,15.5-16.2c0-8.9-7-16.2-15.5-16.2c-8.6,0-15.5,7.3-15.5,16.2
+					C47.4,52.9,54.3,60.2,62.9,60.1z"/>
 			</defs>
+			<use xlink:href="#SVGID_3_"  overflow="visible" fill-rule="evenodd" clip-rule="evenodd" fill="#E6E7E8"/>
 			<clipPath id="SVGID_4_">
 				<use xlink:href="#SVGID_3_"  overflow="visible"/>
 			</clipPath>
-			<rect x="21.1" y="58.2" clip-path="url(#SVGID_4_)" fill="#4B4B4B" width="82.2" height="163.6"/>
-		</g>
-	</g>
-	<g>
-		<g>
-			<defs>
-				<path id="SVGID_5_" d="M62.9,60.1c8.5,0.1,15.4-7.2,15.5-16.2c0-8.9-7-16.2-15.5-16.2c-8.6,0-15.5,7.3-15.5,16.2
-					C47.4,52.9,54.3,60.2,62.9,60.1z"/>
-			</defs>
-			<clipPath id="SVGID_6_">
-				<use xlink:href="#SVGID_5_"  overflow="visible"/>
-			</clipPath>
-			<rect x="42.4" y="22.7" clip-path="url(#SVGID_6_)" fill="#4B4B4B" width="40.9" height="42.4"/>
+			<rect x="42.4" y="22.7" clip-path="url(#SVGID_4_)" fill="#E6E7E8" width="40.9" height="42.4"/>
 		</g>
 	</g>
 </g>
