@@ -30,9 +30,10 @@ body
 
     &--hero-video
 
-        // @include max-width($tablet-landscape - 1px)
-        margin-left: -10px
-        margin-right: -10px
+        margin: 0 -10px 100px
+
+        @include media-query($tablet-landscape)
+            margin: 0 -10px 140px
 
 
 
@@ -44,11 +45,11 @@ body
 
     @include media-query($phone)
         max-width: 440px
-        margin: 60px auto
+        margin: 80px auto
 
     @include media-query($tablet-landscape)
         max-width: 585px
-        margin: 100px auto
+        margin: 140px auto
 
 
 .offer
