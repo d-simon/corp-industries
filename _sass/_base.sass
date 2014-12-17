@@ -12,6 +12,10 @@ body
 .section
     margin: 0 auto 80px
 
+    @include media-query($tablet-landscape)
+        margin: 0 auto 120px
+
+
     &__container
         display: block
         max-width: $full-width
