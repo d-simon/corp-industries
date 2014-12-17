@@ -2,9 +2,11 @@
 ---
 {% include components/jquery/jquery-1.11.1.min.js %}
 {% include components/isotope/isotope.pkgd.min.js %}
-{% include components/glitch/glitch.jquery.js %}
+{% include components/glitch/glitch.jquery-mod.js %}
 {% include components/html2canvas/html2canvas.js %}
-{% include components/glitch/glitch.js %}
+{% include components/html2canvas/html2canvas.svg.js %}
+{% include components/glitch/glitch-mod.js %}
+{% include components/vimeo/frogaloop.js %}
 
 
 (function ($) {
@@ -25,13 +27,52 @@
         direction: 'random' // 'horizontal', 'vertical' or 'random'
     });
 
-    // $('body').each(function () {
-    //     var self = this;
-    //     setTimeout(function () {
-    //         $(self).glitcher('replace', {
-    //             amount: 8
-    //         });
-    //     },2500);
-    // });
+
+
+    var iframe = $('#hacktivism').get(0),
+        player = $f(iframe);
+
+    $('[data-js-glitcher-on-click]').bind('click.glitcher', function () {
+
+        $(this).html('Signing up…')
+
+        $('#glitch-wrapper').find('iframe').remove();
+
+        $('#glitch-wrapper').glitcher('replace', {
+            amount: 24,
+            complete: function () {
+                console.log(arguments, this);
+                drawImage();
+                $('body').css('background-color', '#222');
+                $('.hacktivism-video').add('.hacktivism-message').addClass('is-active');
+
+                player.api('play');
+            }
+        });
+
+        // $('body').find('canvas').first().glitcher('replace', { amount: 4 })
+    });
+
+
+    function drawImage() {
+        var canvas = $('body').find('canvas').first().get(0);
+        var context = canvas.getContext('2d');
+
+        var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+        var data = imageData.data;
+
+        for(var i = 0; i < data.length; i += 4) {
+          // red
+          data[i] = 255 - data[i];
+          // green
+          data[i + 1] = 255 - data[i + 1];
+          // blue
+          data[i + 2] = 255 - data[i + 2];
+        }
+
+        // overwrite original image
+        context.putImageData(imageData, 0, 0);
+      }
+
 
 }(jQuery));

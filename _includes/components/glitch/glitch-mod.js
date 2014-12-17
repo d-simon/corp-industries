@@ -43,6 +43,7 @@
 	 *                                     of the original canvas
 	 */
 	var _glitch = function(canvas, amount) {
+        console.log('_glitch');
 		var
 			// cache the width and height of the canvas locally
 			x, y, w = canvas.width, h = canvas.height,
@@ -66,6 +67,7 @@
 
 			srcData, targetImageData, data;
 
+        console.log('_glitch:after var ');
 		// set the dimensions of the working canvas
 		tempCanvas.width = w;
 		tempCanvas.height = h;
@@ -73,8 +75,11 @@
 		// draw the initial image onto the working canvas
 		tempCtx.drawImage(canvas, 0, 0, w, h);
 
+        console.log('_glitch: after drawImage');
 		// store the data of the original image for use when offsetting a channel
 		srcData = tempCtx.getImageData(0, 0, w, h).data;
+
+        console.log('_glitch: after getImageData');
 
 		// randomly offset slices horizontally
 		for (i = 0; i < _len; i++) {
@@ -89,23 +94,38 @@
 			x = getRandInt(1, maxOffset);
 			chunkWidth = w - x;
 
+            console.log('_glitch: before random horizontal offset drawImage');
+
+
+
+            // TODO: BUG IN FIREFOX
+            // drawImage fails silently
+
+
 			// draw the first chunk
 			tempCtx.drawImage(canvas,
 				0, y, chunkWidth, chunkHeight,
 				x, y, chunkWidth, chunkHeight);
 
+            console.log('_glitch: after random horizontal offset drawImage');
+
 			// draw the rest
 			tempCtx.drawImage(canvas,
 				chunkWidth, y, x, chunkHeight,
 				0, y, x, chunkHeight);
+            console.log('_glitch: after random horizontal offset drawImage2');
 		}
+
+        console.log('_glitch: after random offset');
 
 		// get hold of the ImageData for the working image
 		targetImageData = tempCtx.getImageData(0, 0, w, h);
 
+        console.log('_glitch: after getImageData 2');
 		// and get a local reference to the rgba data array
 		data = targetImageData.data;
 
+        console.log('_glitch: before loops');
 		// Copy a random color channel from the original image into
 		// the working canvas, offsetting it by a random amount
 		//
@@ -125,6 +145,7 @@
 			data[i++] *= 2;
 		}
 
+        console.log('_glitch: after loops');
 		// TODO: The above loops are the most costly in this function, iterating
 		// over all the pixels in the image twice.
 		// It maybe possible to optimize this by combining both loops into one,
@@ -134,12 +155,14 @@
 		// copy the tweaked ImageData back into the context
 		tempCtx.putImageData(targetImageData, 0, 0);
 
-		// add scan lines
-		tempCtx.fillStyle = "rgb(0,0,0)";
-		for (i = 0; i < h; i += 2) {
-			tempCtx.fillRect (0, i, w, 1);
-		}
 
+        // MOD: Corp Industries
+		// add scan lines
+		tempCtx.fillStyle = "rgb(0,255,255)";
+		for (i = 0; i < h; i += 2) {
+			tempCtx.fillRect (0, i, w, 0.5);
+		}
+        console.log('tempCanvas', tempCanvas);
 		return tempCanvas;
 	};
 
@@ -155,16 +178,21 @@
 			// the amount to glitch the image
 			amount: 6,
 			// a callback that takes the glitched canvas as its only argument
-			complete: noop
+			complete: noop,
+            logging: true,
+            profile: true,
+            // useCORS: true,
+            allowTaint: true
 		});
 
 		// callback for when the element has been rendered
-		options.onrendered = function(canvas) {
-			options.complete(_glitch(canvas, options.amount));
+		var onrendered = function(canvas) {
+            console.log('onrendered', canvas);
+            options.complete(_glitch(canvas, options.amount));
 		};
 
 		// render the element onto a canvas
-		html2canvas(el[0] ? el : [el], options);
+		html2canvas(el[0] ? el : [el], options).then(onrendered);
 	};
 
 	/**

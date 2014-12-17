@@ -149,7 +149,77 @@ body
         line-height: 1.15
     &__answer
 
+.glitch-wrapper
+    position: relative
+    z-index: 1
 
+body > canvas
+    width: 100%
+
+
+.hacktivism-message
+    visibility: hidden
+    z-index: -1
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    text-align: center
+
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace
+    font-size: 2rem
+    font-weight: bold
+    color: #fff
+    padding: 40px
+    background: #000
+
+    &.is-active
+        visibility: visible
+        z-index: 11
+
+    &--bottom
+        top: auto
+        bottom: 0
+
+
+.hacktivism-video
+    visibility: hidden
+    z-index: -1
+    position: fixed
+    background: #000
+    top: 50%
+    left: 50%
+
+    &.is-active
+        visibility: visible
+        z-index: 12
+
+        & + .hacktivism-bg
+            display: block
+            position: fixed
+            z-index: 2
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            background: rgba(0,0,0,0.3)
+
+    width: 320px
+    height: 180px
+    margin-left: -320px/2
+    margin-top: -180px/2
+
+    @include media-query($tablet-portrait)
+        width: 640px
+        height: 360px
+        margin-left: -640px/2
+        margin-top: -360px/2
+
+    @include media-query($desktop-large)
+        width: 1280px
+        height: 720px
+        margin-left: -1280px/2
+        margin-top: -720px/2
 
 .hero-video
     display: block

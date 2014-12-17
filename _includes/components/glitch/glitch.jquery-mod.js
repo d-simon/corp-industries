@@ -23,8 +23,9 @@
             var $c=$t.clone();
             var height=$t.height();
             var width=$t.width();
-            var bg = null;
 
+            // MOD Corp Industries
+            var bg = null;
             if(s.bg===null){
                 bg=$t.css('background-color');
             } else {
