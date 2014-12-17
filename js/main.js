@@ -17,9 +17,9 @@
 
     $('[data-js-glitch]').glitch({
         bg: null,    // background color
-        maxint: 10,     // max interval between glitchings
+        maxint: 7,     // max interval between glitchings
         minint: 2,      // min interval between glitchings
-        maxglitch: 5,   // max number of twitches
+        maxglitch: 6,   // max number of twitches
         hshift: 3,      // max horizontal shift
         vshift: 3,      // max vertical shift
         direction: 'random' // 'horizontal', 'vertical' or 'random'
