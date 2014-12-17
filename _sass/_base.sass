@@ -6,9 +6,11 @@
 body
     margin: 0 $gutters/2
 
+.thin
+    font-weight: 300
 
 .section
-    margin: 0 auto 30px
+    margin: 0 auto 80px
 
     &__container
         display: block
@@ -32,9 +34,9 @@ body
 
 .logo
     display: block
-    width: 100%
-    max-width: 280px
-    margin: 30px 0
+    width: 90%
+    max-width: 375px
+    margin: 40px 2.5%
 
     @include media-query($phone)
         max-width: 440px
@@ -47,13 +49,22 @@ body
 
 .offer
     @extend %row
-    max-width: $tablet-portrait
+    max-width: $tablet-landscape
     margin: 0 auto
+
+    &__headline
+        // font-size: 4rem
+        text-align: center
+        margin-bottom: 60px
+
+        &-break
+            @include max-width($tablet-landscape - 1px)
+                display: block
 
     &__coffin
         @include unit(whole)
 
-        @include media-query($tablet-portrait)
+        @include media-query($tablet-landscape)
             @include responsive-unit(golden-small)
 
         & > img
@@ -63,7 +74,7 @@ body
         margin: 40px auto 0
 
         @include unit(whole)
-        @include media-query($tablet-portrait)
+        @include media-query($tablet-landscape)
             @include responsive-unit(golden-large)
             margin: 80px auto 0
 
@@ -85,7 +96,7 @@ body
         border: 0
         width: 100%
         text-shadow: none
-        margin-top: $base-line-height * $base-font-size
+        margin-top: $base-line-height * $base-font-size * 2
         margin-bottom: $base-line-height * $small-font-size
 
         &:hover, &:active, &:focus
