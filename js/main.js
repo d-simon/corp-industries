@@ -8,11 +8,13 @@
 {% include components/glitch/glitch-mod.js %}
 {% include components/vimeo/frogaloop.js %}
 
+{% include components/chuffle/jquery.chuffle.js %}
+
 
 (function ($) {
 
     $('[data-js-grid]').isotope({
-        transitionDuration: 0,
+        transitionDuration: '0.4s',
         layoutMode: 'fitRows'
     });
 
@@ -30,27 +32,57 @@
 
 
     var iframe = $('#hacktivism').get(0),
-        player = $f(iframe);
+        player = $f(iframe),
+        $scrambleElements = $('p'); // .add('h1').add('h2').add('h3').add('h4').add('h5').add('h6');
 
     $('[data-js-glitcher-on-click]').bind('click.glitcher', function () {
+
+        $scrambleElements.add(this).each(function (i) {
+            var $item = $(this);
+            setTimeout(function() {
+                $item.chuffle({ lang: "en" })
+            }, 50*i);
+        });
+
+        $('body').addClass('hacked');
 
         $(this).html('Signing up…')
 
         $('#glitch-wrapper').find('iframe').remove();
 
-        $('#glitch-wrapper').glitcher('replace', {
-            amount: 24,
-            complete: function () {
-                console.log(arguments, this);
-                drawImage();
-                $('body').css('background-color', '#222');
-                $('.hacktivism-video').add('.hacktivism-message').addClass('is-active');
+            setTimeout(function () {
+                $('#glitch-wrapper').glitcher('replace', {
+                    amount: 24,
+                    complete: function () {
+                        console.log(arguments, this);
+                        drawImage();
 
-                player.api('play');
-            }
-        });
+                        $('body').css('background-color', '#222');
 
-        // $('body').find('canvas').first().glitcher('replace', { amount: 4 })
+                        $('.hacktivism-video')
+                            .add('.hacktivism-message')
+                            .addClass('is-active');
+
+                        $('.hacktivism-message').find('span')
+                            .add($scrambleElements)
+                            .add('.logo')
+                            .glitch({
+                                bg: null,    // background color
+                                maxint: 1.1,     // max interval between glitchings
+                                minint: 0.5,      // min interval between glitchings
+                                maxglitch: 8,   // max number of twitches
+                                hshift: 0.1,      // max horizontal shift
+                                vshift: 0.1,      // max vertical shift
+                                direction: 'random' // 'horizontal', 'vertical' or 'random'
+                            });
+
+
+
+                        player.api('play');
+                    }
+                });
+            }, 500+50*$scrambleElements.length);
+
     });
 
 

@@ -5,6 +5,20 @@
 
 body
     margin: 0 $gutters/2
+    background: #fff
+    color: #222
+
+    // -webkit-transition: all 2s ease-in
+    // -moz-transition: all 2s ease-in
+    // -ms-transition: all 2s ease-in
+    // -o-transition: all 2s ease-in
+    // transition: all 2s ease-in
+
+    &.hacked
+        // background: #000
+        // color: #eee
+        *
+            word-wrap: break-word
 
 .thin
     font-weight: 300
@@ -107,8 +121,8 @@ body
         text-transform: none
         font-weight: 400
         text-shadow: none
-        margin-top: $base-line-height * $base-font-size * 2
-        margin-bottom: $base-line-height * $small-font-size * 2
+        margin-top: 10px
+        margin-bottom: 20px
 
         &:hover, &:active, &:focus
             color: #FFF
@@ -168,10 +182,10 @@ body > canvas
     text-align: center
 
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace
-    font-size: 2rem
+    font-size: 1.5rem
     font-weight: bold
     color: #fff
-    padding: 40px
+    padding: 10px
     background: #000
 
     &.is-active
@@ -181,6 +195,10 @@ body > canvas
     &--bottom
         top: auto
         bottom: 0
+
+    @include media-query($tablet-portrait)
+        font-size: 2rem
+        padding: 20px
 
 
 .hacktivism-video
@@ -216,11 +234,11 @@ body > canvas
         margin-left: -640px/2
         margin-top: -360px/2
 
-    @include media-query($desktop-large)
-        width: 1280px
-        height: 720px
-        margin-left: -1280px/2
-        margin-top: -720px/2
+    // @include media-query($desktop-large)
+    //     width: 1280px
+    //     height: 720px
+    //     margin-left: -1280px/2
+    //     margin-top: -720px/2
 
 .hero-video
     display: block
