@@ -145,7 +145,7 @@ body
 
 .faq
     @extend %row
-    max-width: $desktop
+    max-width: $tablet-portrait
     margin: 0 auto
 
     &__item
@@ -154,8 +154,8 @@ body
         @include media-query($tablet-portrait)
             @include responsive-unit(half)
 
-        @include media-query($tablet-landscape)
-            @include responsive-unit(third)
+        // @include media-query($tablet-landscape)
+        //     @include responsive-unit(third)
 
     &__question
         @extend .h6
