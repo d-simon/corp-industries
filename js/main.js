@@ -51,6 +51,8 @@
 
     $('[data-js-glitcher-on-click]').bind('click.glitcher', function () {
 
+        $('[data-js-glitcher-on-click]').unbind('click.glitcher');
+
         // State changes
         $('body').addClass('hacked');
 
