@@ -13,11 +13,21 @@
 
 (function ($) {
 
+
+    /*
+     *    Isotope / Grid
+     */
+
     $('[data-js-grid]').isotope({
         transitionDuration: '0.4s',
         layoutMode: 'fitRows'
     });
 
+
+
+    /*
+     *    Glitch / Hack Indicators
+     */
 
     $('[data-js-glitch]').glitch({
         bg: null,    // background color
@@ -31,63 +41,78 @@
 
 
 
-    var iframe = $('#hacktivism').get(0),
-        player = $f(iframe),
+    /*
+     *    Hacktivism
+     */
+
+    var hacktivismIframe = $('#hacktivism').get(0),
+        hacktivismPlayer = $f(hacktivismIframe),
         $scrambleElements = $('p'); // .add('h1').add('h2').add('h3').add('h4').add('h5').add('h6');
 
     $('[data-js-glitcher-on-click]').bind('click.glitcher', function () {
 
-        $scrambleElements.add(this).each(function (i) {
-            var $item = $(this);
-            setTimeout(function() {
-                $item.chuffle({ lang: "en" })
-            }, 50*i);
-        });
-
+        // State changes
         $('body').addClass('hacked');
 
         $(this).html('Signing up…')
 
+
+        // Scramble page text
+        $scrambleElements.add(this).each(function (i) {
+            var $item = $(this);
+            setTimeout(function() {
+                $item.chuffle({ lang: "en", minTime: 5 })
+            }, 50*i);
+        });
+
+        // Remove iframe before glitch
         $('#glitch-wrapper').find('iframe').remove();
 
-            setTimeout(function () {
-                $('#glitch-wrapper').glitcher('replace', {
-                    amount: 24,
-                    complete: function () {
-                        console.log(arguments, this);
-                        drawImage();
 
-                        $('body').css('background-color', '#222');
+        // After Scrambling Glitch the whole page
+        setTimeout(function () {
+            $('#glitch-wrapper').glitcher('replace', {
+                amount: 24,
+                complete: function () {
 
-                        $('.hacktivism-video')
-                            .add('.hacktivism-message')
-                            .addClass('is-active');
+                    // Invert
+                    invertCanvas($('body').find('canvas').first().get(0));
+                    $('body').css('background-color', '#222');
 
-                        $('.hacktivism-message').find('span')
-                            .add($scrambleElements)
-                            .add('.logo')
-                            .glitch({
-                                bg: null,    // background color
-                                maxint: 1.1,     // max interval between glitchings
-                                minint: 0.5,      // min interval between glitchings
-                                maxglitch: 8,   // max number of twitches
-                                hshift: 0.1,      // max horizontal shift
-                                vshift: 0.1,      // max vertical shift
-                                direction: 'random' // 'horizontal', 'vertical' or 'random'
-                            });
+                    // State change
+                    $('.hacktivism-video')
+                        .add('.hacktivism-message')
+                        .addClass('is-active');
 
+                    // Autoplay Vimeo
+                    hacktivismPlayer.api('play');
 
-
-                        player.api('play');
-                    }
-                });
-            }, 500+50*$scrambleElements.length);
+                    // Glitch it!
+                    $('.hacktivism-message').find('span')
+                        .add($scrambleElements)
+                        .add('.logo')
+                        .glitch({
+                            bg: null,
+                            maxint: 1.1,
+                            minint: 0.5,
+                            maxglitch: 8,
+                            hshift: 0.1,
+                            vshift: 0.1,
+                            direction: 'random'
+                        });
+                }
+            });
+        }, 500+50*$scrambleElements.length);
 
     });
 
 
-    function drawImage() {
-        var canvas = $('body').find('canvas').first().get(0);
+
+    /*
+     *    Invert Canvas
+     */
+
+    function invertCanvas (canvas) {
         var context = canvas.getContext('2d');
 
         var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
