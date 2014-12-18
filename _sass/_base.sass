@@ -145,13 +145,17 @@ body
 
 .about
     @extend %row
-    max-width: $tablet-landscape
+    max-width: $tablet-portrait
     margin: 0 auto
 
     &__headline
-        // font-size: 4rem
+        font-size: 4rem
+        font-style: italic
         text-align: center
-        margin-bottom: 30px
+        margin: 60px 0 60px 0
+        font-weight: 300
+
+
 
         @include max-width($tablet-landscape - 1px)
             margin-bottom: 40px
@@ -163,11 +167,9 @@ body
 
 
     &__description
-        margin: 40px auto 0
+        margin: 20px auto 0
 
         @include media-query($tablet-landscape)
-            @include responsive-unit(golden-large)
-            margin: 80px auto 0
 
         max-width: $tablet-landscape
         font-size: 1.7rem
