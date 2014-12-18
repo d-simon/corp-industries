@@ -33,12 +33,42 @@ layout: default
 
 <section class="section section--testimonials">
     <div class="section__container">
-        <h2 class="section__title">Testimonials</h2>
-
+        <h2 class="section__title"><span data-js-glitch>Testimonials</span></h2>
+        <div class="testimonials" data-js-grid>
+            {% for testimonials in site.data.testimonials %}
+            <div class="testimonials__item">
+                <h3 class="testimonials__name">
+                    <b>{{ testimonials.name }}, {{ testimonials.position }}</b>
+                </h3>
+                <p class="testimonials__quote">{{ testimonials.quote }}</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
 
-<!-- <button type="button" data-js-glitcher-on-click>Hack</button> -->
+<section class="section section--about">
+    <div class="section__container">
+        <h2 class="section__title">About Us</h2>
+        <h1 class="offer__headline"><span class="offer__headline-break">One Million U.S.&nbsp;Dollars</span> <span class="thin">for Your</span> Body</h1>
+        <div class="about">
+             <div class="about__description">
+                <!-- About Us Text formatted -->
+                <p>Since the foundation of <strong>CORP Industries</strong> in 2008, our goal has always been to revolutionize humanity and its society. Where it took the human race millennia to learn the upright-walk <em>(homo erectus)</em>, CORP Industries has managed to achieve <strong>such an evolutionary milestone</strong> in just a few years.</p>
+
+                <p><strong>Sustainability</strong> has always been a present issue in our society. Great companies have wasted thousands of hours in research for new energy-sources, whereas <strong>the optimal energy-source</strong> has always been with us - <strong>us.</strong></p>
+
+                <p>The human body produces <strong>around 100 Watts</strong> of power during one day. Thanks to our innovative bio-amplifiers, which were developed in close partnership with the <em>National Research Center for Clean Energy of the U.S</em>,  we are able to </p>
+                <h1 class="offer__headline"><span class="offer__headline-break">get at least 220 Watts</span></h1>
+                <p>out of an average human body.</p>
+
+                <p>While our procedures are <strong>generally harmless</strong>, the process of harvesting body-energy can be extremely painful. Therefore <strong>we make sure</strong> that every subject which is connected to the power-grid is <strong>absolutely brain-dead.</strong></p>
+
+
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="section section--faq">
     <div class="section__container">

@@ -163,6 +163,25 @@ body
         line-height: 1.15
     &__answer
 
+.testimonials
+    @extend %row
+    max-width: $tablet-portrait
+    margin: 0 auto
+
+    &__item
+        @include unit(whole)
+
+        @include media-query($tablet-portrait)
+            @include responsive-unit(half)
+
+        // @include media-query($tablet-landscape)
+        //     @include responsive-unit(third)
+
+    &__name
+        @extend .h6
+        font-size: 1.7rem
+        line-height: 1.15
+
 .glitch-wrapper
     position: relative
     z-index: 1
