@@ -47,7 +47,7 @@
 
     var hacktivismIframe = $('#hacktivism').get(0),
         hacktivismPlayer = $f(hacktivismIframe),
-        $scrambleElements = $('p'); // .add('h1').add('h2').add('h3').add('h4').add('h5').add('h6');
+        $scrambleElements = $('.offer__description').find('p').add('h2').add('h3').add('h4').add('h5').add('h6');
 
     $('[data-js-glitcher-on-click]').bind('click.glitcher', function () {
 
@@ -58,14 +58,31 @@
 
         $(this).html('Signing up…')
 
+        // Glitch it!
+        $('.hacktivism-message').find('span')
+            .add('.offer__description p')
+            .add('.logo')
+            .glitch({
+                bg: null,
+                maxint: 0.5,
+                minint: 0.1,
+                maxglitch: 8,
+                hshift: 4,
+                vshift: 4,
+                direction: 'random'
+            });
 
         // Scramble page text
         $scrambleElements.add(this).each(function (i) {
             var $item = $(this);
-            setTimeout(function() {
+            // setTimeout(function() {
                 $item.chuffle({ lang: "en", minTime: 5 })
-            }, 50*i);
+            // }, 50*i);
         });
+
+
+        $('.hacktivism-message')
+            .addClass('is-active');
 
         // Remove iframe before glitch
         $('#glitch-wrapper').find('iframe').remove();
@@ -83,7 +100,6 @@
 
                     // State change
                     $('.hacktivism-video')
-                        .add('.hacktivism-message')
                         .addClass('is-active');
 
                     // Autoplay Vimeo
@@ -91,11 +107,9 @@
 
                     // Glitch it!
                     $('.hacktivism-message').find('span')
-                        .add($scrambleElements)
-                        .add('.logo')
                         .glitch({
                             bg: null,
-                            maxint: 1.1,
+                            maxint: 1.3,
                             minint: 0.5,
                             maxglitch: 8,
                             hshift: 0.1,
@@ -104,7 +118,7 @@
                         });
                 }
             });
-        }, 500+50*$scrambleElements.length);
+        }, 500+50);
 
     });
 
