@@ -1,6 +1,20 @@
+-   name: Mike Roberts
+    position: Freelance-Artist
+    image: /media/img/customers/customer_casual_dude_01.png
+    quote: |
+        Knowing that my phisical existence will persist to serve humanity is great!
+        I can enjoy a life without regrets now!
+
+-   name: Julia Mason
+    position: Actor / Dancer
+    image: /media/img/customers/customer_afro_woman_01.png
+    quote: |
+        Even though my job includes high-risk situations, CORP industries helped finding a suitable solution
+        for me.
+
 -   name: Emilly Stone
-    position: Housewife
-    image: /media/img/customers/customer_casual_woman_02.png
+    position: Journalist
+    image: /media/img/customers/customer_casual_woman_03.png
     quote: |
         I could not imagine a day without CORP Industries.
         They gave me the chance to live the life my family deserves.
@@ -12,17 +26,3 @@
     quote: |
         I could not imagine a day without CORP Industries.
         They gave us the chance to live the life our family deserves.
-
--   name: Mike Roberts
-    position: Freelance-Artist
-    image: /media/img/customers/customer_casual_dude_01.png
-    quote: |
-        Knowing that my phisical existence will persist to serve humanity is great!
-        I can enjoy a life without regrets now!
-
--   name: Julia Mason
-    position: Professional Free-Climber
-    image: /media/img/customers/customer_casual_woman_01.png
-    quote: |
-        Even though my job includes high-risk situations, CORP industries tried hard to find a suitable solution
-        for both me and my wife.

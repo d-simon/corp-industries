@@ -37,13 +37,14 @@ layout: default
         <div class="testimonials" data-js-grid>
             {% for testimonials in site.data.testimonials %}
             <div class="testimonials__item">
-                <div class="testimonials__image circular">
-                    <img src="{{ testimonials.image | prepend: site.baseurl }}" alt="{{ testimonials.name }}"/>
+                <div class="testimonials__image circular" style="background-image:url({{ testimonials.image | prepend: site.baseurl }})">
+                    <img src="{{ testimonials.image | prepend: site.baseurl }}" alt="{{ testimonials.name }}" class="circular__image"/>
                 </div>
                 <h3 class="testimonials__name">
-                    <b>{{ testimonials.name }}, {{ testimonials.position }}</b>
+                    <b>{{ testimonials.name }}</b>
                 </h3>
-                <p class="testimonials__quote">{{ testimonials.quote }}</p>
+                <span class="testimonials_position"><em>{{ testimonials.position }}</em></span>
+                <p class="testimonials__quote"><em>"{{ testimonials.quote }}"</em></p>
             </div>
             {% endfor %}
         </div>
@@ -59,7 +60,9 @@ layout: default
                 <!-- About Us Text formatted -->
                 <p>Since the foundation of <strong>CORP Industries</strong> in 2008, our goal has always been to revolutionize humanity and its society. Where it took the human race millennia to learn the upright-walk <em>(homo erectus)</em>, CORP Industries has managed to achieve <strong>such an evolutionary milestone</strong> in just a few years.</p>
 
-                <p><strong>Sustainability</strong> has always been a present issue in our society. Great companies have wasted thousands of hours in research for new energy-sources, whereas <strong>the optimal energy-source</strong> has always been with us - <strong>us.</strong></p>
+                <h1 class="offer__headline"><span class="offer__headline-break">Sustainability has always been a present issue in our society.</span></h1>
+
+                <p>Great companies have wasted thousands of hours in research for new energy-sources, whereas <strong>the optimal energy-source</strong> has always been with us - <strong>us.</strong></p>
 
                 <p>The human body produces <strong>around 100 Watts</strong> of power during one day. Thanks to our innovative bio-amplifiers, which were developed in close partnership with the <em>National Research Center for Clean Energy of the U.S</em>,  we are able to get at least 220 Watts out of an average human body.</p>
 
