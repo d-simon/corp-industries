@@ -37,6 +37,10 @@ layout: default
         <div class="testimonials" data-js-grid>
             {% for testimonials in site.data.testimonials %}
             <div class="testimonials__item">
+                <div class="testimonials__image circular">
+                    <img src="{{ testimonials.image | prepend: site.baseurl }}" alt="{{ testimonials.name }}"/>
+                </div>
+
                 <h3 class="testimonials__name">
                     <b>{{ testimonials.name }}, {{ testimonials.position }}</b>
                 </h3>
