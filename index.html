@@ -31,6 +31,31 @@ layout: default
     </div>
 </section>
 
+<section class="section section--faq">
+    <div class="section__container">
+        <h2 class="section__title"><span data-js-glitch>FAQ</span></h2>
+        <div class="faq" data-js-grid>
+            {% for faq in site.data.faq %}
+            <div class="faq__item">
+                <h3 class="faq__question" data-js-glitch-hacktivism>
+                    <b>{{ faq.question }}</b>
+                </h3>
+                <p class="faq__answer" data-js-glitch-hacktivism>{{ faq.answer }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<section class="section section--signup">
+    <div class="section__container">
+        <h2 class="section__title"><span data-js-glitch>GET YOUR REWARD</span></h2>
+        <div class="signup" data-js-grid>
+                        <button type="button" class="signup__button" data-js-glitcher-on-click data-js-glitch-hacktivism>Sign up now!</button>
+        </div>
+    </div>
+</section>
 
 <section class="section section--about">
     <div class="section__container">
@@ -55,6 +80,15 @@ layout: default
     </div>
 </section>
 
+<section class="section section--signup">
+    <div class="section__container">
+        <h2 class="section__title"><span data-js-glitch>GET YOUR REWARD</span></h2>
+        <div class="signup" data-js-grid>
+                        <button type="button" class="signup__button" data-js-glitcher-on-click data-js-glitch-hacktivism>Sign up now!</button>
+        </div>
+    </div>
+</section>
+
 <section class="section section--testimonials">
     <div class="section__container">
         <h2 class="section__title"><span data-js-glitch>Testimonials</span></h2>
@@ -68,25 +102,19 @@ layout: default
                     <b data-js-glitch-hacktivism>{{ testimonials.name }}</b>
                 </h3>
                 <span class="testimonials__position"><span data-js-glitch-hacktivism>{{ testimonials.position }}</span></span>
-                <p class="testimonials__quote"><span data-js-glitch-hacktivism>“{{ testimonials.quote }}”</em></p>
+                <p class="testimonials__quote"><span data-js-glitch-hacktivism>“{{ testimonials.quote }}”</span></p>
             </div>
             {% endfor %}
         </div>
     </div>
 </section>
 
-<section class="section section--faq">
+
+<section class="section section--signup">
     <div class="section__container">
-        <h2 class="section__title"><span data-js-glitch>FAQ</span></h2>
-        <div class="faq" data-js-grid>
-            {% for faq in site.data.faq %}
-            <div class="faq__item">
-                <h3 class="faq__question" data-js-glitch-hacktivism>
-                    <b>{{ faq.question }}</b>
-                </h3>
-                <p class="faq__answer" data-js-glitch-hacktivism>{{ faq.answer }}</p>
-            </div>
-            {% endfor %}
+        <h2 class="section__title"><span data-js-glitch>GET YOUR REWARD</span></h2>
+        <div class="signup" data-js-grid>
+                        <button type="button" class="signup__button" data-js-glitcher-on-click data-js-glitch-hacktivism>Sign up now!</button>
         </div>
     </div>
 </section>
