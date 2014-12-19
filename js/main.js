@@ -49,6 +49,10 @@
 
     $clickGlitch.bind('click.glitcher', function () {
 
+
+        ga('send', 'signup', 'button', 'click', 'Sign up Button', null, {'Button Nr. ': $clickGlitch.index($(this)) });
+        console.log('send', 'signup', 'button', 'click', 'Sign up Button', null, {'Button Nr. ': $clickGlitch.index($(this)) });
+
         $clickGlitch.unbind('click.glitcher');
 
         // State changes
