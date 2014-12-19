@@ -44,7 +44,7 @@
 
     var hacktivismIframe = $('#hacktivism').get(0),
         hacktivismPlayer = $f(hacktivismIframe),
-        $scrambleElements = $('.offer__description').find('p').add('.testimonials p').add('.about').add('h2').add('h3').add('h4').add('h5').add('h6');
+        $scrambleElements = $('.offer__description').find('p').add('.testimonials p').add('.about p').add('h2').add('h3').add('h4').add('h5').add('h6');
         $clickGlitch = $('[data-js-glitcher-on-click]');
 
     $clickGlitch.bind('click.glitcher', function () {
@@ -58,6 +58,9 @@
         // Glitch it!
         $('.hacktivism-message').find('span')
             .add('.offer__description p')
+            .add('.testimonials p')
+            .add('.about p')
+            .add('.about blockquote')
             .add('.logo')
             .glitch({
                 bg: null,
