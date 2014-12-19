@@ -21,14 +21,11 @@ body
         *
             word-wrap: break-word
 
-.thin
-    font-weight: 300
-
 .section
-    margin: 0 auto 80px
+    margin: 0 auto 120px
 
     @include media-query($tablet-landscape)
-        margin: 0 auto 120px
+        margin: 0 auto 200px
 
 
     &__container
@@ -146,8 +143,8 @@ body
 
 .about
     @extend %row
-    max-width: $tablet-portrait
-    margin: 0 auto
+    max-width: $tablet-landscape
+    margin: 0 auto 180px
     position: relative
 
     &__quote
@@ -170,7 +167,9 @@ body
                 border-top: 1px solid #f7f7f7
                 border-bottom: 1px solid #f7f7f7
                 padding: 2rem 0
-                margin: 10rem 0
+                margin: 10rem auto
+                max-width: $tablet-portrait
+
 
 
         &:before,
@@ -192,12 +191,6 @@ body
             right: 0
             top: auto
             bottom: -11rem
-
-        @include media-query($tablet-landscape)
-            &:before
-                left: 10px
-            &:after
-                right: 10px
 
 
         @include max-width($tablet-landscape - 1px)
@@ -232,6 +225,8 @@ body
 
         & > p
             margin-bottom: 1rem
+            max-width: $phone
+            margin: 0 auto
 
 
 
@@ -276,11 +271,12 @@ body
         @extend .h6
         font-size: 1.5em
         line-height: 1.15
-        padding-top: 100px
+        padding-top: 75px
         margin-bottom: 0
 
     &__quote
         clear: both
+        font-style: italic
 
 .glitch-wrapper
     position: relative
@@ -293,6 +289,8 @@ body > canvas
     // @extend .shake-constant
     // @extend .shake-opacity
 
+.thin
+    font-weight: 300
 
 .hacktivism-message
     display: none
